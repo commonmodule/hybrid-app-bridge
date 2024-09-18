@@ -1,0 +1,1 @@
+{"version":3,"file":"HybridAppBridge.js","sourceRoot":"","sources":["../src/HybridAppBridge.ts"],"names":[],"mappings":"AAAA,MAAM,eAAe;IACZ,SAAS,CAAC,MAAc,EAAE,IAAU;QACzC,IAAK,MAAc,CAAC,cAAc,EAAE,CAAC;YAClC,MAAc,CAAC,cAAc,CAAC,WAAW,CACxC,IAAI,CAAC,SAAS,CAAC,EAAE,MAAM,EAAE,IAAI,EAAE,CAAC,CACjC,CAAC;QACJ,CAAC;IACH,CAAC;CACF;AAED,eAAe,IAAI,eAAe,EAAE,CAAC"}

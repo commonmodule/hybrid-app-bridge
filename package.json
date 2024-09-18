@@ -1,0 +1,11 @@
+{
+  "name": "@common-module/hybrid-bridge",
+  "author": "yj.gaia",
+  "homepage": "https://yj.dev",
+  "version": "0.0.1",
+  "type": "module",
+  "types": "./lib/index.d.ts",
+  "main": "./lib/index.js",
+  "dependencies": {},
+  "devDependencies": {}
+}
