@@ -1,11 +1,13 @@
 {
-  "name": "@common-module/hybrid-bridge",
+  "name": "@commonmodule/hybrid-app-bridge",
   "author": "yj.gaia",
-  "homepage": "https://yj.dev",
+  "homepage": "https://personas.gaia.cc/yj.gaia",
   "version": "0.0.1",
   "type": "module",
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",
-  "dependencies": {},
+  "dependencies": {
+    "uuid": "^11.1.0"
+  },
   "devDependencies": {}
 }

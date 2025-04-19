@@ -71,6 +71,10 @@
     ".vscode",
     "test-src",
     "old",
-    "test"
+    "test",
+    "supabase",
+    "service-worker",
+    "legacy",
+    "deno"
   ]
 }

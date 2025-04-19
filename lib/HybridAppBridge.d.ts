@@ -1,8 +1,9 @@
-type GlobalFunction = (...args: any[]) => void;
 declare class HybridAppBridge {
-    sendToApp(method: string, data?: any): void;
-    registerGlobalFunction(name: string, func: GlobalFunction): void;
-    removeGlobalFunction(name: string): void;
+    private pending;
+    private streams;
+    constructor();
+    invoke<T>(method: string, ...args: any[]): Promise<T>;
+    invokeStream<T>(method: string, ...args: any[]): AsyncIterable<T>;
 }
 declare const _default: HybridAppBridge;
 export default _default;
