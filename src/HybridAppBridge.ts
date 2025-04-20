@@ -48,7 +48,15 @@ class HybridAppBridge {
     };
   }
 
+  public isHybridApp(): boolean {
+    return typeof (window as any).__Native?.invoke === "function";
+  }
+
   public async invoke<T>(method: string, ...args: any[]): Promise<T> {
+    if (!this.isHybridApp()) {
+      return Promise.reject(new Error("Not in a Hybrid App Environment."));
+    }
+
     return new Promise((resolve, reject) => {
       const id = uuidv4();
       this.pending[id] = { resolve, reject };
@@ -57,6 +65,25 @@ class HybridAppBridge {
   }
 
   public invokeStream<T>(method: string, ...args: any[]): AsyncIterable<T> {
+    if (!this.isHybridApp()) {
+      const error = new Error("Not in a Hybrid App Environment.");
+      return {
+        [Symbol.asyncIterator](): AsyncIterator<T> {
+          return {
+            next(): Promise<IteratorResult<T>> {
+              return Promise.reject(error);
+            },
+            throw(err?: any): Promise<IteratorResult<T>> {
+              return Promise.reject(err);
+            },
+            return(): Promise<IteratorResult<T>> {
+              return Promise.resolve({ value: undefined, done: true });
+            },
+          };
+        },
+      };
+    }
+
     const id = uuidv4();
 
     const queue: T[] = [];

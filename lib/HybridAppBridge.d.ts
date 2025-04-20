@@ -2,6 +2,7 @@ declare class HybridAppBridge {
     private pending;
     private streams;
     constructor();
+    isHybridApp(): boolean;
     invoke<T>(method: string, ...args: any[]): Promise<T>;
     invokeStream<T>(method: string, ...args: any[]): AsyncIterable<T>;
 }
